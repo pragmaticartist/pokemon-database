@@ -1,0 +1,10 @@
+POST http://localhost:3000/pokemon/add
+content-type: application/json
+
+{
+    "pokedex": "25",
+    "name": "Pikachu"
+}
+
+###
+GET http://localhost:3000/pokemon

@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PokemonType {
+  id: Float!
+  name: String!
+  color: String!
+}
+
+type PokemonMove {
+  id: Float!
+  name: String!
+  type: String!
+  pp: Float!
+  description: String!
+  damageClass: String!
+  power: Float!
+}
+
+type Pokemon {
+  id: Float!
+  pokedex: Float!
+  name: String!
+  moves: [PokemonMove!]!
+  types: [PokemonType!]!
+}
+
+type Query {
+  getAllPokemon: Pokemon!
+  pokemon(pokedex: Float, name: String, move: String, type: String): Pokemon!
+}
+
+type Mutation {
+  createPokemon(data: CreatePokemonInput!): Pokemon!
+}
+
+input CreatePokemonInput {
+  name: String
+  pokedex: Float
+  move: [String!]!
+  type: [String!]!
+}
